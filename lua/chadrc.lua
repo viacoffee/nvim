@@ -8,7 +8,7 @@ M.base46 = {
   hl_override = {
     Comment = { italic = true },
     -- Function = { bold = true },
-    Function = { fg = "#c5c8c6", bold = true },
+    Function = { fg = "#c5c8c6" },
     Keyword  = { bold = true },
   	["@comment"] = { italic = true },
 
