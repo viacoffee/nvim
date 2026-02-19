@@ -2,14 +2,14 @@
 local M = {}
 
 M.base46 = {
-  theme = "chalkboard",
+  theme = "onedark",
   transparency = false,
 
   hl_override = {
     Comment = { italic = true },
     -- Function = { bold = true },
-    Function = { fg = "#c5c8c6" },
-    Keyword  = { bold = true },
+    -- Function = { fg = "#c5c8c6" },
+    -- Keyword  = { bold = true },
   	["@comment"] = { italic = true },
 
     -- CursorLine = { bg = "black" }
