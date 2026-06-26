@@ -1,11 +1,10 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local servers = {
-  "html",
-  "cssls",
   "jedi_language_server",
   "rubocop",
   "bashls",
+  "rust-analyzer",
 }
 vim.lsp.enable(servers)
 
