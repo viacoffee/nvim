@@ -1,15 +1,35 @@
-require "nvchad.options"
-
 local o = vim.o
-o.cursorlineopt = "both" -- cursor line
+
+-- Line numbers
+o.number = true
+o.relativenumber = true
+
+-- Width ruler (tune to taste)
+o.colorcolumn = "80"
+
+o.cursorline = true
+o.cursorlineopt = "both"
+o.signcolumn = "yes"
+o.termguicolors = true
+o.mouse = "a"
+o.clipboard = "unnamedplus"
+
+-- Indent
+o.expandtab = true
+o.shiftwidth = 2
+o.tabstop = 2
+o.smartindent = true
+
+-- Search
+o.ignorecase = true
+o.smartcase = true
 
 -- File handling
-o.undofile = true -- Presistent undo
-o.undodir = vim.fn.expand "~/.vim/undodir/" -- Undo directory
-o.backup = false -- Don't create backup files
-o.autowrite = false -- No auto saving
-o.writebackup = false -- Don't create backup before writing
-o.swapfile = false -- Who even uses these?
+o.undofile = true
+o.undodir = vim.fn.expand "~/.vim/undodir/"
+o.backup = false
+o.writebackup = false
+o.swapfile = false
 
 -- Encoding
 vim.scriptencoding = "utf-8"
@@ -17,14 +37,15 @@ o.encoding = "utf-8"
 o.fileencoding = "utf-8"
 
 -- Misc
-o.ignorecase = true
 o.showcmd = false
 o.cmdheight = 0
 o.scrolloff = 10
 o.sidescrolloff = 10
 o.linebreak = true
+o.splitright = true
+o.splitbelow = true
 
--- Create undo directory
+-- undodir is not auto-created
 local undodir = vim.fn.expand "~/.vim/undodir/"
 if vim.fn.isdirectory(undodir) == 0 then
   vim.fn.mkdir(undodir, "p")
