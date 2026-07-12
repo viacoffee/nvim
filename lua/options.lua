@@ -4,7 +4,7 @@ local o = vim.o
 o.number = true
 o.relativenumber = true
 
--- Width ruler (tune to taste)
+-- Width ruler
 o.colorcolumn = "80"
 
 o.cursorline = true
@@ -16,17 +16,19 @@ o.clipboard = "unnamedplus"
 
 -- Indent
 o.expandtab = true
-o.shiftwidth = 2
-o.tabstop = 2
+o.shiftwidth = 4
+o.tabstop = 4
+o.softtabstop = 4
 o.smartindent = true
 
 -- Search
-o.ignorecase = true
 o.smartcase = true
+o.hlsearch = false
+o.incsearch = true
 
 -- File handling
-o.undofile = true
 o.undodir = vim.fn.expand "~/.vim/undodir/"
+o.undofile = true
 o.backup = false
 o.writebackup = false
 o.swapfile = false

@@ -14,6 +14,14 @@ map("n", "-", "<C-x>", { desc = "Decrement number" })
 -- Select all
 map("n", "<C-a>", "gg<S-v>G", { desc = "Select all" })
 
+-- Page movement
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+
+-- Search movement
+map("n", "n", "nzzzv")
+map("n", "n", "Nzzzv")
+
 -- Window movement
 map("n", "sh", "<C-w>h", { desc = "Window left" })
 map("n", "sj", "<C-w>j", { desc = "Window down" })
@@ -42,8 +50,3 @@ map("n", "<leader>ff", t.find_files, { desc = "Find files" })
 map("n", "<leader>fa", function() t.find_files { hidden = true, no_ignore = true } end, { desc = "Find all files" })
 map("n", "<leader>fw", t.live_grep, { desc = "Live grep" })
 map("n", "<leader>fb", t.buffers, { desc = "Find buffers" })
-
--- Diagnostics
-map("n", "[d", function() vim.diagnostic.jump { count = -1 } end, { desc = "Prev diagnostic" })
-map("n", "]d", function() vim.diagnostic.jump { count = 1 } end, { desc = "Next diagnostic" })
-map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Line diagnostics" })
