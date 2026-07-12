@@ -20,7 +20,7 @@ map("n", "<C-u>", "<C-u>zz")
 
 -- Search movement
 map("n", "n", "nzzzv")
-map("n", "n", "Nzzzv")
+map("n", "N", "Nzzzv")
 
 -- Window movement
 map("n", "sh", "<C-w>h", { desc = "Window left" })
