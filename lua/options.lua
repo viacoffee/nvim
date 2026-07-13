@@ -1,4 +1,6 @@
-local o = vim.o
+local o = vim.opt
+
+local undodir = vim.fn.expand "~/.vim/undodir/"
 
 -- Line numbers
 o.number = true
@@ -27,7 +29,7 @@ o.hlsearch = false
 o.incsearch = true
 
 -- File handling
-o.undodir = vim.fn.expand "~/.vim/undodir/"
+o.undodir = undodir
 o.undofile = true
 o.backup = false
 o.writebackup = false
@@ -46,10 +48,9 @@ o.sidescrolloff = 10
 o.linebreak = true
 o.splitright = true
 o.splitbelow = true
-o.shortmess:append("sI")
+o.shortmess:append("I")
 
 -- undodir is not auto-created
-local undodir = vim.fn.expand "~/.vim/undodir/"
 if vim.fn.isdirectory(undodir) == 0 then
   vim.fn.mkdir(undodir, "p")
 end
