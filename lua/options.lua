@@ -46,6 +46,7 @@ o.sidescrolloff = 10
 o.linebreak = true
 o.splitright = true
 o.splitbelow = true
+o.shortmess:append("sI")
 
 -- undodir is not auto-created
 local undodir = vim.fn.expand "~/.vim/undodir/"
