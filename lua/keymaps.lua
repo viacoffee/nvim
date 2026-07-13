@@ -44,6 +44,9 @@ map({ "n", "v" }, "<C-k>", "<C-w>+", { desc = "Resize down" })
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
+-- tmux-sessionizer
+map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<cr>", { desc = "Tmux sessionizer" })
+
 -- Telescope (fuzzy find)
 local t = require "telescope.builtin"
 map("n", "<leader>ff", t.find_files, { desc = "Find files" })
