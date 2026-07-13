@@ -35,6 +35,12 @@ o.backup = false
 o.writebackup = false
 o.swapfile = false
 
+-- auto reload on focus/enter/idle
+o.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  command = "checktime",
+})
+
 -- Encoding
 vim.scriptencoding = "utf-8"
 o.encoding = "utf-8"
