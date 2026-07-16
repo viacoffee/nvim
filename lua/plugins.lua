@@ -13,7 +13,8 @@ return {
   -- Fuzzy finder
   {
     "nvim-telescope/telescope.nvim",
-    branch = "0.1.x",
+    -- master (not the 0.1.x release) supports nvim-treesitter's main branch
+    branch = "master",
     dependencies = { "nvim-lua/plenary.nvim" },
     cmd = "Telescope",
     opts = {
@@ -51,6 +52,23 @@ return {
 
   -- LSP server default configs (cmd/root/filetypes); enabled in lua/lsp.lua
   { "neovim/nvim-lspconfig" },
+
+  -- Treesitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    build = ":TSUpdate",
+    lazy = false,
+    config = function()
+      require("nvim-treesitter").install {
+        "lua", "python", "ruby", "rust", "go", "templ", "bash", "css", "html", "json", "markdown", "vim", "vimdoc",
+      }
+      -- start highlighting when a parser is available for the buffer
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function() pcall(vim.treesitter.start) end,
+      })
+    end,
+  },
 
   -- Formatting
   {
