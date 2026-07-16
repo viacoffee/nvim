@@ -1,10 +1,4 @@
--- Servers (install the binaries yourself, e.g. via your package manager)
-vim.lsp.enable {
-  "jedi_language_server",
-  "rubocop",
-  "bashls",
-  "rust_analyzer",
-}
+-- Servers are installed + enabled by mason-lspconfig (see lua/plugins.lua).
 
 -- LSP navigation + native completion, set per buffer on attach
 vim.api.nvim_create_autocmd("LspAttach", {

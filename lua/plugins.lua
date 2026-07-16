@@ -50,8 +50,22 @@ return {
     },
   },
 
-  -- LSP server default configs (cmd/root/filetypes); enabled in lua/lsp.lua
-  { "neovim/nvim-lspconfig" },
+  -- LSP: mason installs the server binaries, mason-lspconfig auto-installs
+  -- the list below and enables each one. Keymaps/on-attach live in lua/lsp.lua.
+  {
+    "mason-org/mason-lspconfig.nvim",
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+    opts = {
+      ensure_installed = {
+        "jedi_language_server", "rubocop", "bashls", "rust_analyzer",
+        "gopls", "templ", "sqlls",
+        "lua_ls", "cssls", "html", "jsonls",
+      },
+    },
+  },
 
   -- Treesitter
   {
@@ -61,7 +75,7 @@ return {
     lazy = false,
     config = function()
       require("nvim-treesitter").install {
-        "lua", "python", "ruby", "rust", "go", "templ", "bash", "css", "html", "json", "markdown", "vim", "vimdoc",
+        "lua", "python", "ruby", "rust", "go", "templ", "bash", "css", "html", "json", "markdown", "sql", "vim", "vimdoc",
       }
       -- start highlighting when a parser is available for the buffer
       vim.api.nvim_create_autocmd("FileType", {
