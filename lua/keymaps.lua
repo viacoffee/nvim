@@ -4,6 +4,10 @@ local map = vim.keymap.set
 map("n", "<leader>s", "<cmd>w<cr>", { desc = "Save file" })
 map("n", "<leader>q", "<cmd>bd<cr>", { desc = "Close buffer" })
 
+-- Comment toggle
+map("n", "<leader>/", "gcc", { remap = true, desc = "Toggle comment" })
+map("x", "<leader>/", "gc", { remap = true, desc = "Toggle comment" })
+
 -- File explorer (netrw)
 map("n", "<leader>e", "<cmd>Explore<cr>", { desc = "Explorer" })
 
