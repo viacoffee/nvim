@@ -23,6 +23,10 @@ o.tabstop = 4
 o.softtabstop = 4
 o.smartindent = true
 
+-- Completion menu
+o.completeopt = { "menuone", "noselect", "popup" }
+o.pumheight = 15
+
 -- Search
 o.smartcase = true
 o.hlsearch = false

@@ -53,3 +53,8 @@ map("n", "<leader>ff", t.find_files, { desc = "Find files" })
 map("n", "<leader>fa", function() t.find_files { hidden = true, no_ignore = true } end, { desc = "Find all files" })
 map("n", "<leader>fw", t.live_grep, { desc = "Live grep" })
 map("n", "<leader>fb", t.buffers, { desc = "Find buffers" })
+
+-- Completion menu
+map("i", "<C-Space>", function() vim.lsp.completion.get() end, { desc = "Trigger completion" })
+map("i", "<Tab>", function() return vim.fn.pumvisible() == 1 and "<C-n>" or "<Tab>" end, { expr = true })
+map("i", "<S-Tab>", function() return vim.fn.pumvisible() == 1 and "<C-p>" or "<S-Tab>" end, { expr = true })
