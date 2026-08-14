@@ -28,6 +28,7 @@ o.completeopt = { "menuone", "noselect", "popup" }
 o.pumheight = 15
 
 -- Search
+o.ignorecase = true
 o.smartcase = true
 o.hlsearch = false
 o.incsearch = true
