@@ -58,6 +58,10 @@ map("n", "<leader>fa", function() t.find_files { hidden = true, no_ignore = true
 map("n", "<leader>fw", t.live_grep, { desc = "Live grep" })
 map("n", "<leader>fb", t.buffers, { desc = "Find buffers" })
 
+-- Diagnostics
+map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+map("n", "<leader>fd", t.diagnostics, { desc = "Find diagnostics" })
+
 -- Completion menu
 map("i", "<C-Space>", function() vim.lsp.completion.get() end, { desc = "Trigger completion" })
 map("i", "<Tab>", function() return vim.fn.pumvisible() == 1 and "<C-n>" or "<Tab>" end, { expr = true })
