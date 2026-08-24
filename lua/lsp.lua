@@ -1,5 +1,10 @@
 -- Servers are installed + enabled by mason-lspconfig (see lua/plugins.lua).
 
+vim.diagnostic.config {
+  virtual_text = false,
+  severity_sort = true,
+}
+
 -- LSP navigation + native completion, set per buffer on attach
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
